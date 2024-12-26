@@ -1,0 +1,13 @@
+[Unit]
+Description=Telegram Bot 2
+After=network.target
+
+[Service]
+ExecStart=/var/www/bot_home/venv/bin/python /var/www/bot_home/manage.py register_owner_bot
+WorkingDirectory=/var/www/bot_home
+Restart=always
+User=ubuntu
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target
